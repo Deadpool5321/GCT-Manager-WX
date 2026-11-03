@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "wx-chart": "/components/wx-chart/wx-chart" 
+  }
+}

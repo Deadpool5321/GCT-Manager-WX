@@ -1,0 +1,278 @@
+/* 全局样式 */
+page {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+  min-height: 100vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 登录容器 */
+.login-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60rpx;
+}
+
+.logo {
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 20rpx;
+}
+
+.app-name {
+  font-size: 50rpx;
+  font-weight:bolder;
+  color: #333;
+  margin-bottom: 10rpx;
+  letter-spacing: 1px;
+}
+
+.version {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.date {
+  font-size: 30rpx;
+  color: #666;
+  margin-bottom: 60rpx;
+}
+
+.login-type {
+  width: 100%;
+}
+
+.wechat-login {
+  background-color: #07C160;
+  color: #fff;
+  border-radius: 8rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  margin-bottom: 40rpx;
+}
+
+.wechat-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 16rpx;
+  vertical-align: middle;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.line {
+  flex: 1;
+  height: 1rpx;
+  background-color: #ddd;
+}
+
+.divider-text {
+  font-size: 24rpx;
+  color: #999;
+  padding: 0 20rpx;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 800rpx;
+  background-color: #fff;
+  border-radius: 40rpx;
+  padding: 60rpx;
+  box-sizing: border-box;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+
+/* 表单项 - 调整上下间距 */
+.form-item {
+  position: relative;
+  margin-bottom: 30rpx; /* 增加上下间距 */
+}
+
+/* 输入框 - 增大高度5px (约10rpx) */
+.input {
+  width: 100%;
+  padding: 25rpx 20rpx 45rpx 20rpx;
+  outline: 0;
+  border: 4rpx solid rgba(105, 105, 105, 0.397); /* 增加边框厚度 */
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  height: 118rpx; /* 原高度88rpx + 30rpx padding = 118rpx */
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.1); /* 添加1px左右的阴影效果 */
+}
+
+/* 占位符样式 */
+.input-placeholder {
+  position: absolute;
+  left: 20rpx;
+  top: 35rpx;
+  color: grey;
+  font-size: 32rpx;
+  transition: 0.3s ease;
+}
+
+/* 输入框聚焦和有值时的占位符样式 */
+.input:focus + .input-placeholder,
+.input:not([placeholder=""]) + .input-placeholder {
+  top: 75rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.input:not([placeholder=""]) + .input-placeholder {
+  color: green;
+}
+
+/* 角色选择 */
+.role-select {
+  display: flex;
+  justify-content: center;
+  margin: 30rpx 0;
+  font-size: 28rpx;
+  color: rgba(88, 87, 87, 0.822);
+}
+
+.radio-label {
+  margin: 0 30rpx;
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.radio-label radio {
+  transform: scale(1.5);
+}
+
+/* 登录按钮 */
+.account-login {
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  padding: 28rpx;
+  border-radius: 20rpx;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 600;
+  margin-top: 20rpx;
+  transition: background-color 0.3s ease;
+}
+
+/* 按钮按下效果 */
+.account-login:active {
+  background-color: rgb(56, 90, 194);
+}
+
+/* 注册链接 */
+.register-link {
+  margin-top: 30rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: rgba(88, 87, 87, 0.822);
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  color: royalblue;
+  font-weight: 600;
+  margin-left: 20rpx;
+  text-decoration: none;
+}
+
+/* Logo与软件名称 */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.logo {
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 10rpx;
+  border-radius: 50%;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.2);
+}
+
+.app-name {
+  font-size: 56rpx;
+  color: royalblue;
+  font-weight: 600;
+  letter-spacing: -2rpx;
+  margin-bottom: 10rpx;
+}
+
+.version-container {
+  margin-top: 0;
+}
+
+.version {
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 0.8);
+}
+
+.date {
+  font-size: 30rpx;
+  color: rgba(102, 102, 102, 0.8);
+  margin-bottom: 20rpx;
+}
+
+/* 日期输入框样式 */
+input[type="date"]:not(:focus):invalid {
+  color: transparent;
+}
+
+input[type="date"]:valid {
+  color: inherit;
+}
+
+/* 脉冲动画 */
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}

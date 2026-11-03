@@ -1,0 +1,69 @@
+<view class="publish-container">
+  <form bindsubmit="submitTask">
+    <!-- 页面标题 -->
+    <view class="page-title">发布公差</view>
+    
+    <!-- 任务基础信息 -->
+    <view class="form-section">
+      <view class="form-item">
+        <text class="label">公差名称</text>
+        <input name="taskName" placeholder="" class="input" bindinput="handleInput"></input>
+        <text class="input-placeholder" hidden="{{!!formData.taskName}}">公差名称</text>
+      </view>
+      <view class="form-item">
+        <text class="label">公差类型</text>
+        <picker range="{{taskTypes}}" bindchange="onTypeChange" class="picker">
+          <view class="picker-input">{{selectedType}}</view>
+        </picker>
+      </view>
+      <view class="form-item">
+        <text class="label">任务日期</text>
+        <picker mode="date" start="{{currentDate}}" bindchange="onDateChange" class="picker">
+          <view class="picker-input">{{selectedDate}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 分配方式 -->
+    <view class="form-section">
+      <text class="section-title">分配方式</text>
+      <radio-group name="assignType" bindchange="onAssignTypeChange">
+        <view class="radio-row">
+          <label class="radio-item">
+            <radio value="leastTimes" checked="{{formData.assignType === 'leastTimes'}}" />
+            <span class="radio-text">次数最少</span>
+          </label>
+          <label class="radio-item">
+            <radio value="random" checked="{{formData.assignType === 'random'}}" />
+            <span class="radio-text">随机分配</span>
+          </label>
+        </view>
+        <view class="radio-row">
+          <label class="radio-item">
+            <radio value="designated" checked="{{formData.assignType === 'designated'}}" />
+            <span class="radio-text">指定人员</span>
+          </label>
+          <label class="radio-item">
+            <radio value="apply" checked="{{formData.assignType === 'apply'}}" />
+            <span class="radio-text">主动申请</span>
+          </label>
+        </view>
+      </radio-group>
+    </view>
+
+    <!-- 通知设置 -->
+    <view class="form-section">
+      <text class="section-title">通知设置</text>
+      <view class="notice-item">
+        <text class="notice-text">系统APP推送</text>
+        <switch name="appPush" checked="{{formData.noticeTypes.includes('appPush')}}" bindchange="onNoticeChange" data-type="appPush"></switch>
+      </view>
+      <view class="notice-item">
+        <text class="notice-text">手机短信提醒</text>
+        <switch name="sms" checked="{{formData.noticeTypes.includes('sms')}}" bindchange="onNoticeChange" data-type="sms"></switch>
+      </view>
+    </view>
+
+    <button form-type="submit" class="submit-btn">确认发布公差</button>
+  </form>
+</view>

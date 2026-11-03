@@ -1,0 +1,103 @@
+<view class="ranking-container">
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <text class="title">公差排行榜</text>
+    <text class="period">12月第4周</text>
+  </view>
+
+  <!-- 前三名展示 -->
+  <view class="top3-container">
+    <!-- 第二名 -->
+    <view class="top-item r2" wx:if="{{rankingList[1]}}">
+      <view class="trophy-icon">
+        <image src="/images/icons/trophy.png"></image>
+      </view>
+      <view class="rank-badge">
+        <text class="rank-number">2</text>
+        <image src="{{rankingList[1].avatar || '/images/avatar-default.png'}}"></image>
+      </view>
+      <text class="user-name">{{rankingList[1].nickname}}</text>
+      <text class="user-group">{{rankingList[1].group}}</text>
+      <text class="user-count">{{rankingList[1].count}}次</text>
+    </view>
+
+    <!-- 第一名 -->
+    <view class="top-item r1" wx:if="{{rankingList[0]}}">
+      <view class="trophy-icon">
+        <image src="/images/icons/trophy.png"></image>
+      </view>
+      <view class="rank-badge">
+        <text class="rank-number">1</text>
+        <image src="{{rankingList[0].avatar || '/images/avatar-default.png'}}"></image>
+      </view>
+      <text class="user-name">{{rankingList[0].nickname}}</text>
+      <text class="user-group">{{rankingList[0].group}}</text>
+      <text class="user-count">{{rankingList[0].count}}次</text>
+    </view>
+
+    <!-- 第三名 -->
+    <view class="top-item r3" wx:if="{{rankingList[2]}}">
+      <view class="trophy-icon">
+        <image src="/images/icons/trophy.png"></image>
+      </view>
+      <view class="rank-badge">
+        <text class="rank-number">3</text>
+        <image src="{{rankingList[2].avatar || '/images/avatar-default.png'}}"></image>
+      </view>
+      <text class="user-name">{{rankingList[2].nickname}}</text>
+      <text class="user-group">{{rankingList[2].group}}</text>
+      <text class="user-count">{{rankingList[2].count}}次</text>
+    </view>
+  </view>
+
+  <!-- 其他排名 -->
+  <view class="ranking-list">
+    <!-- 第四名 -->
+    <view class="ranking-item" wx:if="{{rankingList[3]}}">
+      <text class="rank-number">{{rankingList[3].rank}}</text>
+      <image src="{{rankingList[3].avatar || '/images/avatar-default.png'}}"></image>
+      <view class="user-info">
+        <text class="user-name">{{rankingList[3].nickname}}</text>
+        <text class="user-group">{{rankingList[3].group}}</text>
+      </view>
+      <text class="user-count">{{rankingList[3].count}}次</text>
+      <text class="participation-rate">{{rankingList[3].rate}}参与率</text>
+    </view>
+
+    <!-- 第五名 -->
+    <view class="ranking-item" wx:if="{{rankingList[4]}}">
+      <text class="rank-number">{{rankingList[4].rank}}</text>
+      <image src="{{rankingList[4].avatar || '/images/avatar-default.png'}}"></image>
+      <view class="user-info">
+        <text class="user-name">{{rankingList[4].nickname}}</text>
+        <text class="user-group">{{rankingList[4].group}}</text>
+      </view>
+      <text class="user-count">{{rankingList[4].count}}次</text>
+      <text class="participation-rate">{{rankingList[4].rate}}参与率</text>
+    </view>
+
+    <!-- 第六名 -->
+    <view class="ranking-item" wx:if="{{rankingList[5]}}">
+      <text class="rank-number">{{rankingList[5].rank}}</text>
+      <image src="{{rankingList[5].avatar || '/images/avatar-default.png'}}"></image>
+      <view class="user-info">
+        <text class="user-name">{{rankingList[5].nickname}}</text>
+        <text class="user-group">{{rankingList[5].group}}</text>
+      </view>
+      <text class="user-count">{{rankingList[5].count}}次</text>
+      <text class="participation-rate">{{rankingList[5].rate}}参与率</text>
+    </view>
+
+    <!-- 本人排名 -->
+    <view class="ranking-item my-ranking" wx:if="{{myRanking}}">
+      <text class="rank-number">{{myRanking.rank}}</text>
+      <image src="{{myRanking.avatar || '/images/avatar-default.png'}}"></image>
+      <view class="user-info">
+        <text class="user-name">{{myRanking.nickname}}（我）</text>
+        <text class="user-group">{{myRanking.group}}</text>
+      </view>
+      <text class="user-count">{{myRanking.count}}次</text>
+      <text class="participation-rate">{{myRanking.rate}}参与率</text>
+    </view>
+  </view>
+</view>

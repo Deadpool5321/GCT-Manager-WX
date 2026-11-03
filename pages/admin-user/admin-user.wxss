@@ -1,0 +1,240 @@
+/* pages/admin-user/admin-user.wxss */
+/* 全局样式 */
+page {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+  min-height: 100vh !important;
+}
+
+/* 主容器 */
+.user-manage-container {
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+/* 页面标题 */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+/* 标题文本 */
+.header-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 悬浮添加按钮 */
+.floating-add-btn {
+  position: fixed;
+  bottom: 50rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: royalblue;
+  color: white;
+  border-radius: 20rpx;
+  padding: 25rpx 25rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rpx;
+  box-shadow: 0 4rpx 20rpx rgba(65, 105, 225, 0.4);
+  z-index: 1000;
+  min-width: 120rpx;
+  text-align: center;
+}
+
+/* 悬浮按钮图标 */
+.floating-icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/* 悬浮按钮文本 */
+.floating-text {
+  color: white;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+/* 筛选栏 */
+.filter-bar {
+  display: flex;
+  background-color: white;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 筛选项 */
+.filter-item {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: rgba(88, 87, 87, 0.822);
+  border-radius: 15rpx;
+  transition: all 0.3s ease;
+}
+
+/* 筛选项选中状态 */
+.filter-item.active {
+  background-color: royalblue;
+  color: white;
+  font-weight: 600;
+}
+
+/* 搜索栏 */
+.search-bar {
+  height: 30px;
+  background-color: white;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 搜索输入框 */
+.search-input {
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+  padding: 15rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+}
+
+/* 用户列表 */
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+/* 用户卡片 */
+.user-card {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 4rpx solid rgba(105, 105, 105, 0.397);
+  border-radius: 15rpx;
+  padding: 20rpx;
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 用户头像 */
+.user-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+
+/* 用户信息 */
+.user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15rpx;
+}
+
+/* 用户姓名区域 */
+.user-name-section {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+/* 用户姓名 */
+.user-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 用户类型标签 */
+.user-type-tag {
+  font-size: 24rpx;
+  padding: 5rpx 15rpx;
+  border-radius: 10rpx;
+  font-weight: 500;
+}
+
+/* 管理员标签 */
+.user-type-tag:nth-child(2) {
+  background-color: rgba(255, 107, 157, 0.2);
+  color: #ff6b9d;
+}
+
+/* 用户ID */
+.user-id {
+  font-size: 28rpx;
+  color: rgba(88, 87, 87, 0.822);
+}
+
+/* 用户统计 */
+.user-stats {
+  font-size: 28rpx;
+  color: rgba(88, 87, 87, 0.822);
+}
+
+/* 用户操作按钮 */
+.user-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15rpx;
+}
+
+/* 编辑按钮 */
+.edit-btn {
+  background-color: royalblue;
+  color: white;
+  border: none;
+  border-radius: 10rpx;
+  padding: 15rpx 25rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+/* 删除按钮 */
+.delete-btn {
+  background-color: #ff6b9d;
+  color: white;
+  border: none;
+  border-radius: 10rpx;
+  padding: 15rpx 25rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+/* 无数据提示 */
+.no-data {
+  text-align: center;
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 28rpx;
+  padding: 100rpx 0;
+}
+
+/* 按钮按下效果 */
+.add-btn:active {
+  background-color: rgb(56, 90, 194);
+}
+
+.edit-btn:active {
+  background-color: rgb(56, 90, 194);
+}
+
+.delete-btn:active {
+  background-color: #ff4d85;
+}
+
+.filter-item:active {
+  opacity: 0.8;
+}

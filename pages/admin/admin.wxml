@@ -1,0 +1,53 @@
+<view class="admin-container">
+  <!-- 数据概览 -->
+  <view class="task-section">
+    <text class="section-title">数据概览</text>
+    <view class="task-list">
+      <view class="data-overview">
+        <view class="data-item">
+          <text class="data-label">待处理</text>
+          <text class="data-value">{{pendingCount}}</text>
+        </view>
+        <view class="data-item">
+          <text class="data-label">本周完成</text>
+          <text class="data-value">{{completedCount}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 近期发布任务 -->
+  <view class="task-section">
+    <text class="section-title">近期发布</text>
+    <view class="task-card" wx:if="{{recentTask}}">
+      <view class="task-header">
+        <text class="task-name">{{recentTask.name}}</text>
+        <text class="task-tag">紧急</text>
+      </view>
+      <view class="task-info">
+        <text class="info-label">发布时间：</text>
+        <text class="info-value">{{recentTask.publishTime}}</text>
+      </view>
+      <view class="task-progress">
+        <text class="progress-label">当前进度：</text>
+        <text class="progress-value">{{recentTask.progress}}</text>
+        <button bindtap="viewTaskDetail" class="detail-btn">查看详情</button>
+      </view>
+    </view>
+    <view class="no-task" wx:else>暂无近期紧急公差</view>
+  </view>
+
+  <!-- 发布任务和人员管理模块（仅管理员可见） -->
+  <view class="action-buttons-container" wx:if="{{userType === 'admin'}}">
+    <view class="action-buttons">
+      <view class="action-item" bindtap="goToPublish">
+        <image src="/images/icons/publish.png" class="action-icon"></image>
+        <text class="action-text">发布公差</text>
+      </view>
+      <view class="action-item" bindtap="goToUserManage">
+        <image src="/images/icons/user-manage.png" class="action-icon"></image>
+        <text class="action-text">人员管理</text>
+      </view>
+    </view>
+  </view>
+</view>

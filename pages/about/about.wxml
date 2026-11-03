@@ -1,0 +1,27 @@
+<view class="about-container">
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <text class="header-title">关于我们</text>
+  </view>
+
+  <!-- 主要内容 -->
+  <view class="content-section">
+    <!-- Logo区域 -->
+    <view class="logo-section">
+      <image src="/images/logo.png" class="logo"></image>
+      <text class="app-name">公差通</text>
+      <text class="app-version">版本 0.5</text>
+    </view>
+
+    <!-- 占位文本 -->
+    <view class="placeholder-section">
+      <text class="placeholder-text">无可超越登峰造极</text>
+    </view>
+
+    <!-- 其他信息 -->
+    <view class="info-section">
+      <text class="info-text">© 2026 公差通团队</text>
+      <text class="info-text">让公差管理更简单</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,168 @@
+/* pages/mine/mine.wxss */
+/* 全局样式 */
+page {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+  min-height: 100vh !important;
+}
+
+/* 主容器 */
+.mine-container {
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+/* 用户信息区域 */
+.user-info-section {
+  background-color: white;
+  border: 4rpx solid rgba(105, 105, 105, 0.397);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 头像 */
+.avatar {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin-bottom: 30rpx;
+  border: 6rpx solid royalblue;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.2);
+}
+
+/* 用户详情 */
+.user-details {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+/* 昵称 */
+.nickname {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+/* 用户类型 */
+.user-type {
+  font-size: 28rpx;
+  color: royalblue;
+  background-color: rgba(65, 105, 225, 0.1);
+  padding: 10rpx 20rpx;
+  border-radius: 15rpx;
+  display: inline-block;
+}
+
+/* 用户统计信息 */
+.user-stats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  border-top: 2rpx solid rgba(105, 105, 105, 0.1);
+  padding-top: 30rpx;
+}
+
+/* 统计项 */
+.stat-item {
+  text-align: center;
+}
+
+/* 统计值 */
+.stat-value {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: royalblue;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+/* 统计标签 */
+.stat-label {
+  font-size: 24rpx;
+  color: rgba(88, 87, 87, 0.822);
+  display: block;
+}
+
+/* 功能菜单区域 */
+.menu-section {
+  background-color: white;
+  border: 4rpx solid rgba(105, 105, 105, 0.397);
+  border-radius: 20rpx;
+  padding: 20rpx 0;
+  margin-bottom: 40rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 菜单组 */
+.menu-group {
+  margin-bottom: 20rpx;
+}
+
+/* 菜单项 */
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 40rpx;
+  border-bottom: 2rpx solid rgba(105, 105, 105, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* 最后一个菜单项 */
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+/* 菜单项图标 */
+.menu-icon {
+  font-size: 36rpx;
+  margin-right: 30rpx;
+}
+
+/* 菜单项文本 */
+.menu-text {
+  font-size: 32rpx;
+  color: #333;
+  flex: 1;
+}
+
+/* 菜单项箭头 */
+.menu-arrow {
+  font-size: 32rpx;
+  color: rgba(105, 105, 105, 0.397);
+}
+
+/* 菜单项点击效果 */
+.menu-item:active {
+  background-color: rgba(65, 105, 225, 0.1);
+}
+
+/* 退出登录区域 */
+.logout-section {
+  text-align: center;
+}
+
+/* 退出登录按钮 */
+.logout-btn {
+  background-color: #ff6b9d;
+  color: white;
+  border: none;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  width: 100%;
+}
+
+/* 退出登录按钮按下效果 */
+.logout-btn:active {
+  background-color: rgb(230, 85, 135);
+}

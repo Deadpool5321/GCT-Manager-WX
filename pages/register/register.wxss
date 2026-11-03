@@ -1,0 +1,251 @@
+/* 全局样式 */
+page {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+  min-height: 100vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 页面容器 */
+.register-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+/* 表单容器 */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  width: 100%;
+  max-width: 700rpx;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(30rpx);
+  -webkit-backdrop-filter: blur(30rpx);
+  padding: 60rpx;
+  border-radius: 40rpx;
+  box-shadow: 0 20rpx 50rpx rgba(0, 0, 0, 0.2);
+}
+
+/* 标题样式 */
+.page-title {
+  font-size: 56rpx;
+  color: royalblue;
+  font-weight: 600;
+  letter-spacing: -2rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 20rpx;
+}
+
+/* 标题装饰 */
+.page-title::before, .page-title::after {
+  position: absolute;
+  content: "";
+  height: 32rpx;
+  width: 32rpx;
+  border-radius: 50%;
+  background-color: royalblue;
+}
+
+.page-title::before {
+  width: 36rpx;
+  height: 36rpx;
+  background-color: royalblue;
+  left: 170rpx;
+}
+
+.page-title::after {
+  width: 36rpx;
+  height: 36rpx;
+  animation: pulse 1s linear infinite;
+  left: 170rpx;
+}
+
+/* 提示信息 */
+.message {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 28rpx;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+
+/* 登录链接 */
+.login-link {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 28rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.login-link text {
+  color: rgba(88, 87, 87, 0.822);
+}
+
+.nav-link {
+  color: royalblue;
+  font-weight: 600;
+  margin-left: 20rpx;
+}
+
+/* 表单项 - 调整上下间距，与登录界面保持一致 */
+.form-item {
+  position: relative;
+  margin-bottom: 30rpx; /* 增加上下间距 */
+}
+
+/* 输入框 - 与登录界面保持一致 */
+.input {
+  width: 100%;
+  padding: 25rpx 20rpx 45rpx 20rpx;
+  outline: 0;
+  border: 4rpx solid rgba(105, 105, 105, 0.397);
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  height: 118rpx;
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 占位符样式 */
+.input-placeholder {
+  position: absolute;
+  left: 20rpx;
+  top: 35rpx;
+  color: grey;
+  font-size: 32rpx;
+  transition: 0.3s ease;
+}
+
+/* 输入框聚焦和有值时的占位符样式 */
+.input:focus + .input-placeholder,
+.input:not([placeholder=""]) + .input-placeholder {
+  top: 75rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.input:not([placeholder=""]) + .input-placeholder {
+  color: green;
+}
+
+/* 注册按钮 */
+.register-btn {
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  padding: 24rpx;
+  border-radius: 20rpx;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-top: 20rpx;
+}
+
+/* 按钮按下效果 */
+.register-btn:active {
+  background-color: rgb(56, 90, 194);
+}
+
+/* 脉冲动画 */
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+/* 日期输入框样式 */
+input[type="date"]:not(:focus):invalid {
+  color: transparent;
+}
+
+input[type="date"]:valid {
+  color: inherit;
+}
+
+/* 用户提供的分段选择器样式 */
+.gender-container {
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+
+.radio-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  border: 4rpx solid rgba(105, 105, 105, 0.397);
+  border-radius: 20rpx;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0;
+  overflow: hidden;
+}
+
+.radio-input label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.radio-input radio {
+  display: none;
+}
+
+/* 使用类选择器代替组合选择器 */
+.radio-input .radio-checked {
+  background-color: royalblue;
+  color: white;
+}
+
+.radio-input span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: rgba(88, 87, 87, 0.822);
+  background-color: white;
+}
+
+.flex-row {
+  display: flex;
+  gap: 20rpx;
+  width: 100%;
+}

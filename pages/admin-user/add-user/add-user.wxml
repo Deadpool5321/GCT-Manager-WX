@@ -1,0 +1,74 @@
+<view class="add-user-container">
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <text class="header-title">新增人员</text>
+  </view>
+
+  <!-- 提示信息 -->
+  <view class="info-section">
+    <text class="info-text">请输入已注册用户的ID或账号，将其添加到公差群组中</text>
+  </view>
+
+  <!-- 输入表单 -->
+  <form bindsubmit="submitAddUser">
+    <view class="form-section">
+      <!-- 用户标识输入 -->
+      <view class="form-item">
+        <input 
+          name="userIdentifier" 
+          placeholder="请输入用户ID或账号" 
+          type="text" 
+          class="input" 
+          value="{{formData.userIdentifier}}"
+          bindinput="handleInput"
+          data-name="userIdentifier"
+        />
+      </view>
+
+      <!-- 用户类型选择 -->
+      <view class="form-item">
+        <text class="label">用户类型</text>
+        <view class="radio-group">
+          <label class="radio-item">
+            <radio 
+              value="student" 
+              checked="{{formData.userType === 'student'}}"
+              bindchange="handleRadioChange"
+              data-value="student"
+            />
+            <text>学生</text>
+          </label>
+          <label class="radio-item">
+            <radio 
+              value="admin" 
+              checked="{{formData.userType === 'admin'}}"
+              bindchange="handleRadioChange"
+              data-value="admin"
+            />
+            <text>管理员</text>
+          </label>
+        </view>
+      </view>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="action-section">
+      <button form-type="submit" class="submit-btn">查询并添加</button>
+      <button bindtap="cancelAdd" class="cancel-btn">取消</button>
+    </view>
+  </form>
+
+  <!-- 搜索结果 -->
+  <view class="result-section" wx:if="{{searchResult}}">
+    <text class="result-title">搜索结果</text>
+    <view class="user-card">
+      <image src="{{searchResult.avatar || '/images/avatar-default.svg'}}" class="user-avatar"></image>
+      <view class="user-info">
+        <text class="user-name">{{searchResult.name}}</text>
+        <text class="user-id">ID: {{searchResult.id}}</text>
+        <text class="user-type">{{searchResult.userType === 'admin' ? '管理员' : '学生'}}</text>
+      </view>
+    </view>
+    <button bindtap="confirmAdd" class="confirm-btn">确认添加</button>
+  </view>
+</view>

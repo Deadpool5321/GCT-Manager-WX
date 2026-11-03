@@ -1,0 +1,162 @@
+/* pages/task-list/task-list.wxss */
+/* 全局样式 */
+page {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+  min-height: 100vh !important;
+}
+
+/* 主容器 */
+.task-list-container {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 筛选栏 */
+.filter-bar {
+  display: flex;
+  background-color: white;
+  padding: 20rpx;
+  border-bottom: 2rpx solid rgba(105, 105, 105, 0.1);
+}
+
+/* 筛选项 */
+.filter-item {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx;
+  font-size: 32rpx;
+  color: rgba(88, 87, 87, 0.822);
+  border-radius: 15rpx;
+  transition: all 0.3s ease;
+}
+
+/* 筛选项选中状态 */
+.filter-item.active {
+  background-color: royalblue;
+  color: white;
+  font-weight: 600;
+}
+
+/* 任务内容区域 */
+.task-content {
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 30rpx;
+}
+
+/* 任务卡片 */
+.task-card {
+  background-color: white;
+  border: 4rpx solid rgba(105, 105, 105, 0.397);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 任务头部 */
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25rpx;
+}
+
+/* 任务名称 */
+.task-name {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 任务状态 */
+.task-status {
+  font-size: 28rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 15rpx;
+  font-weight: 500;
+}
+
+/* 任务状态样式 */
+.task-status {
+  background-color: rgba(65, 105, 225, 0.2);
+  color: royalblue;
+}
+
+/* 任务信息 */
+.task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15rpx;
+  margin-bottom: 25rpx;
+}
+
+/* 任务时间、地点、奖励 */
+.task-time, .task-location, .task-reward {
+  font-size: 28rpx;
+  color: rgba(88, 87, 87, 0.822);
+}
+
+/* 任务奖励特殊样式 */
+.task-reward {
+  color: #ff6b9d;
+  font-weight: 500;
+}
+
+/* 任务描述 */
+.task-description {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  background-color: #f9f9f9;
+  border-radius: 15rpx;
+}
+
+/* 接受任务按钮 */
+.accept-btn {
+  width: 100%;
+  background-color: royalblue;
+  color: white;
+  border: none;
+  border-radius: 15rpx;
+  padding: 25rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+/* 无任务提示 */
+.no-task {
+  text-align: center;
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 32rpx;
+  padding: 100rpx 0;
+}
+
+/* 已完成标签 */
+.completed-tag {
+  width: 100%;
+  background-color: white;
+  color: #ff3b30;
+  border: 4rpx solid #ff3b30;
+  border-radius: 15rpx;
+  padding: 25rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* 按钮按下效果 */
+.accept-btn:active {
+  background-color: rgb(56, 90, 194);
+}
+
+/* 筛选项点击效果 */
+.filter-item:active {
+  opacity: 0.8;
+}

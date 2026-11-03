@@ -1,0 +1,33 @@
+<view class="login-container">
+  <!-- 主内容容器 - 实心白色背景框 -->
+  <view class="main-content">
+    <!-- Logo与软件名称 -->
+    <view class="logo-container">
+      <image src="/images/logo.png" class="logo"></image>
+      <text class="app-name">公差通</text>
+        <!-- 版本信息 -->
+    <view class="version-container">
+      <text class="version">V0.5</text>
+    </view>
+    </view>
+    
+    <!-- 日期显示 -->
+    <view class="date">{{loginDate}}</view>
+    
+    <!-- 登录表单 -->
+    <form bindsubmit="formLogin" class="login-form">
+    <view class="form-item">
+      <input name="username" data-name="username" placeholder="" type="text" class="input" bindinput="handleInput"></input>
+      <text class="input-placeholder" hidden="{{!!formData.username}}">账号</text>
+    </view>
+    <view class="form-item">
+      <input name="password" data-name="password" placeholder="" password="true" class="input" bindinput="handleInput"></input>
+      <text class="input-placeholder" hidden="{{!!formData.password}}">密码</text>
+    </view>
+    <button form-type="submit" class="account-login">登录</button>
+    <view class="register-link">
+      <text>没有账号？点我</text><navigator url="/pages/register/register" class="nav-link">注册</navigator>
+    </view>
+  </form>
+  </view>
+</view>

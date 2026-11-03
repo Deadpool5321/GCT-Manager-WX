@@ -1,0 +1,47 @@
+<view class="user-manage-container">
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <text class="header-title">人员管理</text>
+  </view>
+
+  <!-- 悬浮添加按钮 -->
+  <view class="floating-add-btn" bindtap="addUser">
+    <image src="/images/icons/add-user.png" class="floating-icon"></image>
+    <text class="floating-text">添加人员</text>
+  </view>
+
+  <!-- 筛选栏 -->
+  <view class="filter-bar">
+    <view class="filter-item {{currentFilter === 'all' ? 'active' : ''}}" bindtap="switchFilter" data-filter="all">全部</view>
+    <view class="filter-item {{currentFilter === 'student' ? 'active' : ''}}" bindtap="switchFilter" data-filter="student">学生</view>
+    <view class="filter-item {{currentFilter === 'admin' ? 'active' : ''}}" bindtap="switchFilter" data-filter="admin">管理员</view>
+  </view>
+
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <input type="text" placeholder="搜索姓名或ID" bindinput="onSearch" value="{{searchKey}}" class="search-input" />
+  </view>
+
+  <!-- 用户列表 -->
+  <view class="user-list">
+    <view class="user-card" wx:for="{{filteredUsers}}" wx:key="id">
+      <image src="{{item.avatar || '/images/avatar-default.svg'}}" class="user-avatar"></image>
+      <view class="user-info">
+        <view class="user-name-section">
+          <text class="user-name">{{item.name}}</text>
+          <text class="user-type-tag">{{item.userType === 'admin' ? '管理员' : '学生'}}</text>
+        </view>
+        <text class="user-id">ID: {{item.id}}</text>
+        <text class="user-stats">完成公差: {{item.completedTasks}} | 待完成: {{item.pendingTasks}}</text>
+      </view>
+      <view class="user-actions">
+        <button bindtap="editUser" data-id="{{item.id}}" class="edit-btn">编辑</button>
+        <button bindtap="deleteUser" data-id="{{item.id}}" class="delete-btn">删除</button>
+      </view>
+    </view>
+
+    <view class="no-data" wx:if="filteredUsers.length === 0">
+      <text>暂无人员信息</text>
+    </view>
+  </view>
+</view>

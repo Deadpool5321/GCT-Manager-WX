@@ -1,0 +1,254 @@
+/* pages/admin/admin.wxss */
+/* 全局样式 */
+page {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+  min-height: 100vh !important;
+}
+
+/* 主容器 */
+.admin-container {
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+/* 任务区块 */
+.task-section {
+  margin-bottom: 50rpx;
+  background-color: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 区块标题 */
+.section-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30rpx;
+  display: block;
+}
+
+/* 数据概览区域 */
+.data-overview {
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+/* 数据项 */
+.data-item {
+  border: 4rpx solid rgba(105, 105, 105, 0.397);
+  border-radius: 15rpx;
+  padding: 40rpx;
+  width: 50%;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 数据标签 */
+.data-label {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: rgba(88, 87, 87, 0.822);
+  display: block;
+  margin-bottom: 15rpx;
+}
+
+/* 数据值 */
+.data-value {
+  font-size: 64rpx;
+  font-weight: 600;
+  color: royalblue;
+  display: block;
+}
+
+/* 区域头部 */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+/* 发布任务按钮 */
+.publish-btn {
+  background-color: royalblue;
+  color: white;
+  border: none;
+  border-radius: 15rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  flex: 1;
+  max-width: 200rpx;
+}
+
+/* 任务卡片 */
+.task-card {
+  border: 4rpx solid rgba(105, 105, 105, 0.397);
+  border-radius: 15rpx;
+  padding: 30rpx;
+  background-color: white;
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 任务名称 */
+.task-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+/* 任务头部 */
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+/* 任务标签 */
+.task-tag {
+  background-color: #ff6b9d;
+  color: white;
+  padding: 10rpx 20rpx;
+  border-radius: 15rpx;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+/* 任务信息 */
+.task-info {
+  margin-bottom: 20rpx;
+}
+
+/* 信息标签 */
+.info-label {
+  font-size: 28rpx;
+  color: rgba(88, 87, 87, 0.822);
+}
+
+/* 信息值 */
+.info-value {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+/* 任务进度 */
+.task-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20rpx;
+  border-top: 2rpx solid rgba(105, 105, 105, 0.1);
+}
+
+/* 进度标签 */
+.progress-label {
+  font-size: 28rpx;
+  color: rgba(88, 87, 87, 0.822);
+}
+
+/* 进度值 */
+.progress-value {
+  font-size: 28rpx;
+  color: royalblue;
+  font-weight: 600;
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+/* 详情按钮 */
+.detail-btn {
+  background-color: royalblue;
+  color: white;
+  border: none;
+  border-radius: 15rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  flex: 1;
+  max-width: 150rpx;
+}
+
+/* 无任务提示 */
+.no-task {
+  text-align: center;
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 28rpx;
+  padding: 50rpx 0;
+}
+
+/* 功能菜单区域 */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+/* 操作按钮容器 */
+.action-buttons-container {
+  margin-bottom: 50rpx;
+  background-color: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 操作按钮区域 */
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 20rpx;
+  padding: 20rpx 0;
+}
+
+/* 操作按钮项 */
+.action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 30rpx 0;
+  border: 4rpx solid rgba(105, 105, 105, 0.397);
+  border-radius: 15rpx;
+  background-color: white;
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 操作按钮图标 */
+.action-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 15rpx;
+}
+
+/* 操作按钮文本 */
+.action-text {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 操作按钮按下效果 */
+.action-item:active {
+  background-color: rgba(65, 105, 225, 0.1);
+}
+
+/* 按钮按下效果 */
+.publish-btn:active {
+  background-color: rgb(56, 90, 194);
+}
+
+.detail-btn:active {
+  background-color: rgb(56, 90, 194);
+}
+

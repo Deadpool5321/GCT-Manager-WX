@@ -1,0 +1,28 @@
+<view class="student-container">
+  <!-- 进行中任务 -->
+  <view class="task-section">
+    <text class="section-title">进行中公差</text>
+    <view class="task-card" wx:if="{{ongoingTask}}">
+      <text class="task-name">{{ongoingTask.name}}</text>
+      <view class="task-time">时间：{{ongoingTask.time}}</view>
+      <view class="task-location">地点：{{ongoingTask.location}}</view>
+      <view class="task-operation">
+        <button bindtap="acceptTask" class="accept-btn">确认接受</button>
+        <button bindtap="rejectTask" class="reject-btn">申请拒绝</button>
+      </view>
+    </view>
+    <view class="no-task" wx:else>暂无进行中任务</view>
+  </view>
+
+  <!-- 即将到期任务 -->
+  <view class="task-section">
+    <text class="section-title">即将到期任务</text>
+    <view class="task-list">
+      <view class="expire-task" wx:for="{{expireTasks}}" wx:key="index">
+        <text class="task-name">{{item.name}}</text>
+        <text class="task-time">{{item.time}}</text>
+      </view>
+      <view class="no-task" wx:if="{{expireTasks.length === 0}}">暂无即将到期任务</view>
+    </view>
+  </view>
+</view>

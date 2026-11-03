@@ -1,0 +1,59 @@
+<view class="register-container">
+  <!-- 注册表单 -->
+  <form bindsubmit="submitRegister">
+    <!-- 页面标题 -->
+    <view class="page-title">注册</view>
+    
+    <!-- 提示信息 -->
+    <view class="message">创建您的账号以开始使用我们的服务</view>
+    
+    <!-- 姓名 -->
+    <view class="form-item">
+      <input name="name" data-name="name" placeholder="" type="text" class="input" bindinput="handleInput" />
+      <text class="input-placeholder" hidden="{{!!formData.name}}">姓名</text>
+    </view>
+    
+
+    
+    <!-- 账号 -->
+    <view class="form-item">
+      <input name="username" data-name="username" placeholder="" type="text" class="input" bindinput="handleInput" />
+      <text class="input-placeholder" hidden="{{!!formData.username}}">账号</text>
+    </view>
+    
+    <!-- 密码 -->
+    <view class="form-item">
+      <input name="password" data-name="password" placeholder="" password="true" class="input" bindinput="handleInput" />
+      <text class="input-placeholder" hidden="{{!!formData.password}}">密码</text>
+    </view>
+    
+    <!-- 确认密码 -->
+    <view class="form-item">
+      <input name="confirmPassword" data-name="confirmPassword" placeholder="" password="true" class="input" bindinput="handleInput" />
+      <text class="input-placeholder" hidden="{{!!formData.confirmPassword}}">确认密码</text>
+    </view>
+    
+    <view class="gender-container">
+      <radio-group name="userType" class="flex-row" bindchange="handleRadioChange">
+        <view class="radio-input">
+          <label>
+            <radio value="student" checked="{{formData.userType === 'student'}}" />
+            <span class="{{formData.userType === 'student' ? 'radio-checked' : ''}}">我要接受公差</span>
+          </label>
+          <label>
+            <radio value="admin" checked="{{formData.userType === 'admin'}}" />
+            <span class="{{formData.userType === 'admin' ? 'radio-checked' : ''}}">我要发布公差</span>
+          </label>
+        </view>
+      </radio-group>
+    </view>
+    <!-- 注册按钮 -->
+    <button form-type="submit" class="register-btn">注册</button>
+    
+    <!-- 返回登录 -->
+    <view class="login-link">
+      <text>已有账号？点我</text>
+      <navigator url="/pages/login/login" class="nav-link">登录</navigator>
+    </view>
+  </form>
+</view>

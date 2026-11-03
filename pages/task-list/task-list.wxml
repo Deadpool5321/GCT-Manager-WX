@@ -1,0 +1,28 @@
+<!--pages/task-list/task-list.wxml-->
+<view class="task-list-container">
+  <!-- 筛选栏 -->
+  <view class="filter-bar">
+    <view class="filter-item {{currentFilter === 'all' ? 'active' : ''}}" bindtap="switchFilter" data-filter="all">全部</view>
+    <view class="filter-item {{currentFilter === 'available' ? 'active' : ''}}" bindtap="switchFilter" data-filter="available">可接受</view>
+    <view class="filter-item {{currentFilter === 'completed' ? 'active' : ''}}" bindtap="switchFilter" data-filter="completed">已完成</view>
+  </view>
+
+  <!-- 任务列表 -->
+  <view class="task-content">
+    <view class="task-card" wx:for="{{tasks}}" wx:key="id">
+      <view class="task-header">
+        <text class="task-name">{{item.name}}</text>
+        <text class="task-status">{{item.status === 'available' ? '可接受' : '已完成'}}</text>
+      </view>
+      <view class="task-info">
+        <view class="task-time">时间：{{item.time}}</view>
+        <view class="task-location">地点：{{item.location}}</view>
+        <view class="task-reward">公差价值：{{item.reward}}次</view>
+      </view>
+      <view class="task-description">{{item.description}}</view>
+      <button wx:if="item.status === 'available'" bindtap="acceptTask" data-id="{{item.id}}" class="accept-btn">接受公差</button>
+      <view wx:else class="completed-tag">已完成</view>
+    </view>
+    <view class="no-task" wx:if="tasks.length === 0">暂无公差</view>
+  </view>
+</view>
